@@ -82,31 +82,16 @@ Dự án sử dụng bộ dữ liệu CIC-IDS2017 của Canadian Institute for C
 
 ```python
 selected_features = [
-    "Protocol", "Flow Duration", "Tot Fwd Pkts", "Tot Bwd Pkts",
-    "TotLen Fwd Pkts", "TotLen Bwd Pkts", "Fwd Pkt Len Mean",
-    "Bwd Pkt Len Mean", "Flow Byts/s", "Flow Pkts/s",
-    "Pkt Len Mean", "Pkt Len Std", "SYN Flag Cnt",
-    "ACK Flag Cnt", "FIN Flag Cnt", "RST Flag Cnt",
-    "PSH Flag Cnt", "URG Flag Cnt"
+    "Destination Port", "Flow Duration", "Total Fwd Packets",
+    "Total Backward Packets", "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets", "Fwd Packet Length Mean",
+    "Bwd Packet Length Mean", "Flow Bytes/s", "Flow Packets/s",
+    "Packet Length Mean", "Packet Length Std", "SYN Flag Count",
+    "ACK Flag Count", "FIN Flag Count", "RST Flag Count",
+    "PSH Flag Count", "URG Flag Count"
 ]
 ```
 
-## Kết quả mô hình(dự đoán) 
-
-Kết quả dưới đây được ghi nhận sau khi cân bằng dữ liệu bằng SMOTE và
-RandomUnderSampler, sau đó huấn luyện trên 18 đặc trưng đã chọn.
-
-| Mô hình                |Accuracy|Precision| Recall | F1-score | Thời gian train |
-| ---                    | ---    | ---     | ---    | ---      | ---             |
-| Logistic Regression    | ~92.1% |  ~91.8% | ~92.1% | ~91.9%   | ~15s            |
-| Support Vector Machine | ~94.3% |  ~94.1% | ~94.3% | ~94.2%   | ~120s           |
-| Naive Bayes            | ~78.5% |  ~79.2% | ~78.5% | ~78.8%   | ~2s             |
-| K-Nearest Neighbors    | ~96.8% |  ~96.7% | ~96.8% | ~96.7%   | ~45s            |
-| Random Forest          | ~99.2% |  ~99.1% | ~99.2% | ~99.1%   | ~90s            |
-
-Random Forest được chọn cho phần triển khai vì có kết quả tổng thể tốt nhất,
-đặc biệt là recall trên các lớp tấn công. Mô hình này cũng hỗ trợ xem feature
-importance, giúp việc giải thích kết quả dễ hơn.
 
 ## Cài đặt
 
